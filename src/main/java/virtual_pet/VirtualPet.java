@@ -1,49 +1,52 @@
 package virtual_pet;
 
 public class VirtualPet {
-   private String name;
-   private int hungerLevel;
-   private int thirstLevel;
-   private int boerdemLevel;
+    private String petName;
+    private String petDescription;
+    private int petHunger;
+    private int petThirst;
+    private int petBoredom;
 
-    public VirtualPet(String name, int hungerLevel, int thirstLevel, int boerdemLevel) {
-        this.name = name;
-        this.hungerLevel = hungerLevel;
-        this.thirstLevel = thirstLevel;
-        this.boerdemLevel = boerdemLevel;
-    }
-    public void feed(){
-        hungerLevel = 0;
+    public VirtualPet(String petName, String petDescription) {
 
-    }
-    public void water(){
-        thirstLevel = 0;
-    }
-     public void play(){
-        boerdemLevel = 0;
-     }
-    public void status(){
-        //Fido- hunger:5 thirst:5 boredom:5
-        System.out.println(name+"- hunger:"+ hungerLevel+ " thirst:"+ thirstLevel+"boredom"+ boerdemLevel);
-    }
-    public void tick(){
-        hungerLevel = hungerLevel + 2;
-        thirstLevel += 2;
-        boerdemLevel += 2;
-    }
-    public String getName() {
-        return name;
+        this.petName = petName;
+        this.petDescription = petDescription;
+        this.petHunger = 5;
+        this.petThirst = 5;
+        this.petBoredom = 5;
     }
 
-    public int getHungerLevel() {
-        return hungerLevel;
+    public String getPetName() {
+        return petName;
     }
 
-    public int getThirstLevel() {
-        return thirstLevel;
+    public String getPetDescription() {
+        return petDescription;
     }
 
-    public int getBoerdemLevel() {
-        return boerdemLevel;
+    public int getPetHunger() {
+        return petHunger;
+    }
+
+    public int getPetThirst() {
+        return petThirst;
+    }
+
+    public int getPetBoredom() {
+        return petBoredom;
+    }
+
+    public void updatePetHunger(int numberToAdd) {
+        petHunger = petHunger + numberToAdd;
+
+    }
+
+    public void updatePetThirst(int numberToAdd) {
+        petThirst = petThirst + numberToAdd;
+    }
+
+    public void updatePetBoredom(int numberToAdd) {
+        petBoredom = petBoredom + numberToAdd;
+
     }
 }
