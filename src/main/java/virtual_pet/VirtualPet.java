@@ -1,52 +1,50 @@
 package virtual_pet;
 
-public class VirtualPet {
-    private String petName;
-    private String petDescription;
-    private int petHunger;
-    private int petThirst;
-    private int petBoredom;
+import java.util.Random;
 
-    public VirtualPet(String petName, String petDescription) {
+public abstract class VirtualPet {
 
-        this.petName = petName;
-        this.petDescription = petDescription;
-        this.petHunger = 5;
-        this.petThirst = 5;
-        this.petBoredom = 5;
+    protected Random generator = new Random();
+
+    //Instance variables
+    protected String name;
+    protected String description;
+
+    protected int health;
+    protected int mood;
+
+    //Constructor that accepts VirtualPet and establishes default attributes for new pets
+    public VirtualPet(String newName, String newDescription) {
+        name = newName;
+        description = newDescription;
+        health = 50;
+        mood = 50;
     }
 
-    public String getPetName() {
-        return petName;
+    public String getName() {
+        return name;
     }
 
-    public String getPetDescription() {
-        return petDescription;
+    public int getHealth() {
+        return health;
     }
 
-    public int getPetHunger() {
-        return petHunger;
+    public int getMood() {
+        return mood;
     }
 
-    public int getPetThirst() {
-        return petThirst;
+    public abstract void play();
+
+    public int generateRandom() {
+        return generator.nextInt(10);
     }
 
-    public int getPetBoredom() {
-        return petBoredom;
+    @Override
+    public String toString() {
+        return ("[" + name + "] " + description);
     }
 
-    public void updatePetHunger(int numberToAdd) {
-        petHunger = petHunger + numberToAdd;
-
-    }
-
-    public void updatePetThirst(int numberToAdd) {
-        petThirst = petThirst + numberToAdd;
-    }
-
-    public void updatePetBoredom(int numberToAdd) {
-        petBoredom = petBoredom + numberToAdd;
-
+    public void decreaseHealth() {
+        health -= 10;
     }
 }
