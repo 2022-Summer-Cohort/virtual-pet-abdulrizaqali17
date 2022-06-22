@@ -1,4 +1,4 @@
-package virtual_pet;
+package java;
 
 import java.util.Random;
 
@@ -46,5 +46,13 @@ public abstract class VirtualPet {
 
     public void decreaseHealth() {
         health -= 10;
+    }
+
+    public Object getPetName() {
+        return null;
+    }
+
+    public Object getPetDescription() {
+        return null;
     }
 }

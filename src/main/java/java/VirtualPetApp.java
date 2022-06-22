@@ -1,8 +1,8 @@
-package virtual_pet;
+package java;
 
 import java.util.Scanner;
 
-public class VirtualPetApp {
+public class VirtualPetApp{
 
     public static void main(String[] args) {
 
@@ -12,11 +12,11 @@ public class VirtualPetApp {
         OrganicPet steve = new OrganicDog("Organic Dog", "This is my Organic Dog!");
         shelter.intake(steve);
         RoboticPet paul = new RoboticDog("Robotic Dog", "This is my Robotic Dog!");
-        shelter.intake(paul);
+        shelter.intake((OrganicPet) paul);
         OrganicPet jess = new OrganicCat("Organic Cat", "This is my Organic Cat!");
         shelter.intake(jess);
         RoboticPet oly = new RoboticCat("Robotic Cat", "This is my Robotic Cat!");
-        shelter.intake(oly);
+        shelter.intake((OrganicPet) oly);
 
         boolean quit = false;
 
@@ -148,7 +148,7 @@ public class VirtualPetApp {
                             System.out.println("Great! What is a short description of the dog?");
                             String description = input.nextLine();
                             RoboticPet r = new RoboticDog(name, description);
-                            shelter.intake(r);
+                            shelter.intake((OrganicPet) r);
                             System.out.println("Thanks! We'll take good care of " + r.getName() + ".");
 
                         } else if (response3.equalsIgnoreCase("cat")) {
@@ -157,7 +157,7 @@ public class VirtualPetApp {
                             System.out.println("Great! What is a short description of the cat?");
                             String description = input.nextLine();
                             RoboticPet w = new RoboticCat(name, description);
-                            shelter.intake(w);
+                            shelter.intake((OrganicPet) w);
                             System.out.println("Thanks! We'll take good care of " + w.getName() + ".");
                         }
                     }

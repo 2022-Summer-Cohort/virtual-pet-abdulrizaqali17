@@ -1,4 +1,4 @@
-package virtual_pet;
+package java;
 
 public abstract class Dog extends VirtualPet {
     public Dog(String nameParam, String descriptionParam) {

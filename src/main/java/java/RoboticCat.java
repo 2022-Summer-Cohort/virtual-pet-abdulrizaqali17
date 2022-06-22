@@ -1,4 +1,4 @@
-package virtual_pet;
+package java;
 
 public class RoboticCat extends Cat implements RoboticPet{
 

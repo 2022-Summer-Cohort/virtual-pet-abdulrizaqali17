@@ -1,4 +1,4 @@
-package virtual_pet;
+package java;
 
 public class OrganicCat extends Cat implements OrganicPet {
     protected int hunger;

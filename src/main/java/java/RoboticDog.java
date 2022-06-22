@@ -1,4 +1,4 @@
-package virtual_pet;
+package java;
 
 public class RoboticDog extends Dog implements RoboticPet {
     int oilLevel;
