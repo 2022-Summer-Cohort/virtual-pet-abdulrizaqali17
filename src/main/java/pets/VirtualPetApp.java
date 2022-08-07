@@ -1,4 +1,4 @@
-package java;
+package pets;
 
 import java.util.Scanner;
 

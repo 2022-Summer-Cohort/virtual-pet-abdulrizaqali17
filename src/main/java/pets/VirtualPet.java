@@ -1,4 +1,4 @@
-package java;
+package pets;
 
 import java.util.Random;
 
@@ -12,7 +12,6 @@ public abstract class VirtualPet {
 
     protected int health;
     protected int mood;
-
     //Constructor that accepts VirtualPet and establishes default attributes for new pets
     public VirtualPet(String newName, String newDescription) {
         name = newName;

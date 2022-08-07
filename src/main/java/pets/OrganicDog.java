@@ -1,4 +1,4 @@
-package java;
+package pets;
 
 public class OrganicDog extends Dog implements OrganicPet {
 

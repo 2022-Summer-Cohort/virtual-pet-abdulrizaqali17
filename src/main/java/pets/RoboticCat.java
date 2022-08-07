@@ -1,18 +1,12 @@
-package java;
+package pets;
 
-public class RoboticDog extends Dog implements RoboticPet {
+public class RoboticCat extends Cat implements RoboticPet{
+
     int oilLevel;
 
-    public RoboticDog(String newName, String newDescription) {
-        super(newName, newDescription);
+    public RoboticCat(String nameParam, String descriptionParam) {
+        super(nameParam, descriptionParam);
         oilLevel = 50;
-    }
-
-    @Override
-    public void walk() {
-        mood += 20;
-        health += 10;
-        oilLevel -= 5;
     }
 
     @Override
@@ -26,6 +20,8 @@ public class RoboticDog extends Dog implements RoboticPet {
         mood -= (5 + generateRandom());
         oilLevel -= (5 + generateRandom());
     }
+
+
 
     @Override
     public void oilPet() {

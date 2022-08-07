@@ -1,4 +1,4 @@
-package java;
+package pets;
 
 public interface OrganicPet {
     String getName();
