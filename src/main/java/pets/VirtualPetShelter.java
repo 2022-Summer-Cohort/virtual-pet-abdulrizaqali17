@@ -44,6 +44,9 @@ public class VirtualPetShelter {
     public void intake(OrganicPet steve) {
     }
 
+    public void intake(RoboticPet steve) {
+    }
+
     public VirtualPet[] pets() {
         return new VirtualPet[0];
     }

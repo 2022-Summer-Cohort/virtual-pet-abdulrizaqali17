@@ -12,11 +12,11 @@ public class VirtualPetApp{
         OrganicPet steve = new OrganicDog("Organic Dog", "This is my Organic Dog!");
         shelter.intake(steve);
         RoboticPet paul = new RoboticDog("Robotic Dog", "This is my Robotic Dog!");
-        shelter.intake((OrganicPet) paul);
+        shelter.intake( paul);
         OrganicPet jess = new OrganicCat("Organic Cat", "This is my Organic Cat!");
         shelter.intake(jess);
         RoboticPet oly = new RoboticCat("Robotic Cat", "This is my Robotic Cat!");
-        shelter.intake((OrganicPet) oly);
+        shelter.intake( oly);
 
         boolean quit = false;
 
