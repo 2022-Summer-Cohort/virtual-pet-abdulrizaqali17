@@ -9,13 +9,13 @@ public class VirtualPetApp{
         VirtualPetShelter shelter = new VirtualPetShelter();
         Scanner input = new Scanner(System.in);
 
-        OrganicPet steve = new OrganicDog("Organic Dog", "This is my Organic Dog!");
+        OrganicDog steve = new OrganicDog("Organic Dog", "This is my Organic Dog!");
         shelter.intake(steve);
-        RoboticPet paul = new RoboticDog("Robotic Dog", "This is my Robotic Dog!");
+        RoboticDog paul = new RoboticDog("Robotic Dog", "This is my Robotic Dog!");
         shelter.intake( paul);
-        OrganicPet jess = new OrganicCat("Organic Cat", "This is my Organic Cat!");
+        OrganicCat jess = new OrganicCat("Organic Cat", "This is my Organic Cat!");
         shelter.intake(jess);
-        RoboticPet oly = new RoboticCat("Robotic Cat", "This is my Robotic Cat!");
+        RoboticCat oly = new RoboticCat("Robotic Cat", "This is my Robotic Cat!");
         shelter.intake( oly);
 
         boolean quit = false;
@@ -123,7 +123,7 @@ public class VirtualPetApp{
                             String name = input.nextLine();
                             System.out.println("Great! What is a short description of the dog?");
                             String description = input.nextLine();
-                            OrganicPet x = new OrganicDog(name, description);
+                            OrganicDog x = new OrganicDog(name, description);
                             shelter.intake(x);
                             System.out.println("Thanks! We'll take good care of " + x.getName() + ".");
                         } else if (response3.equalsIgnoreCase("cat")) {
@@ -132,7 +132,7 @@ public class VirtualPetApp{
 
                             System.out.println("Great! What is a short description of the cat?");
                             String description = input.nextLine();
-                            OrganicPet y = new OrganicCat(name, description);
+                            OrganicCat y = new OrganicCat(name, description);
                             shelter.intake(y);
                             System.out.println("Thanks! We'll take good care of " + y.getName() + ".");
                         }
@@ -147,8 +147,8 @@ public class VirtualPetApp{
                             String name = input.nextLine();
                             System.out.println("Great! What is a short description of the dog?");
                             String description = input.nextLine();
-                            RoboticPet r = new RoboticDog(name, description);
-                            shelter.intake((OrganicPet) r);
+                            RoboticDog r = new RoboticDog(name, description);
+                            shelter.intake( r);
                             System.out.println("Thanks! We'll take good care of " + r.getName() + ".");
 
                         } else if (response3.equalsIgnoreCase("cat")) {
@@ -156,8 +156,8 @@ public class VirtualPetApp{
                             String name = input.nextLine();
                             System.out.println("Great! What is a short description of the cat?");
                             String description = input.nextLine();
-                            RoboticPet w = new RoboticCat(name, description);
-                            shelter.intake((OrganicPet) w);
+                            RoboticCat w = new RoboticCat(name, description);
+                            shelter.intake(w);
                             System.out.println("Thanks! We'll take good care of " + w.getName() + ".");
                         }
                     }
@@ -179,7 +179,7 @@ public class VirtualPetApp{
                     System.out.println("You maintained all robotic pets!");
                     break;
                 case "10":
-                    // tick
+                    shelter.tickAllPets();
                     break;
                 case "11":
                     System.out.println("Thank you for using our shelter!");
@@ -188,7 +188,7 @@ public class VirtualPetApp{
                     System.out.println("Sorry, I didn't understand you. Try again.");
                     break;
             }
-            shelter.tickAllPets();
+
 
         } while (!quit);
         input.close();

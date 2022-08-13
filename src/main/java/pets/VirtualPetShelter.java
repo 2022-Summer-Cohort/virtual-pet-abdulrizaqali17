@@ -1,13 +1,15 @@
 package pets;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class VirtualPetShelter {
     // Map of pets and attributes
     private int litterBox = 50;
 
-    private Map<String, VirtualPet> shelterPets = new HashMap<String, VirtualPet>();
+    private List<VirtualPet> virtualPetsStore = new ArrayList<>(  );
 
     public int getLitterBox() {
         return litterBox;
@@ -41,59 +43,51 @@ public class VirtualPetShelter {
     public void tick() {
     }
 
-    public void intake(OrganicPet steve) {
+    public void intake(VirtualPet steve) {
+        virtualPetsStore.add( steve );
     }
 
-    public void intake(RoboticPet steve) {
-    }
 
-    public VirtualPet[] pets() {
-        return new VirtualPet[0];
+    public List<VirtualPet> pets() {
+        return virtualPetsStore;
     }
 
     public void feedAllOrganic() {
+        virtualPetsStore.stream().filter( vp->vp instanceof OrganicPet ).forEach( ovp->((OrganicPet) ovp).feed() );
     }
 
     public void waterAllOrganic() {
+        virtualPetsStore.stream().filter( vp->vp instanceof OrganicPet ).forEach( ovp->((OrganicPet) ovp).water() );
     }
 
     public VirtualPet getPet(String petName) {
-        return null;
+        return  virtualPetsStore.stream().filter( vp->vp.getPetName().equals( petName ) ).findFirst().orElse( null );
     }
 
 
     public void adoptPet(VirtualPet pet) {
+        virtualPetsStore.remove( pet );
     }
 
     public void walkDogs() {
+        virtualPetsStore.stream().filter( vp->vp instanceof Dog ).forEach( ovp->((Dog) ovp).walk() );
     }
 
     public void tickAllPets() {
+        virtualPetsStore.stream().forEach( pet->{
+
+            if(pet instanceof  RoboticPet){
+                ((RoboticPet) pet).tick();
+            }else {
+                ((OrganicPet)pet).tick();
+            }
+        } );
     }
 
     public void playOne(VirtualPet pet) {
+        pet.play();
     }
 
-    public void allPetStatus() {
-    }
-
-    public void addNewPet(Object petName, Object petDescription) {
-    }
-
-    public void adoptOutPet(String petToAdopt) {
-    }
-
-    public void entertainOnePet(String petToEntertain) {
-    }
-
-    public void entertainAllPets() {
-    }
-
-    public void waterAllPets() {
-    }
-
-    public void feedAllPets() {
-    }
 }
 
 
